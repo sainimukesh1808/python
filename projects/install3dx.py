@@ -357,7 +357,7 @@ class InstallClient(PreProcessing):
                     return exe_full
 
     def send_email(self, to_address, subject, text=''):
-        from_address = '{}@3ds.com'.format(self.user)
+        from_address = '{}@xyz.com'.format(self.user)
         format_address = to_address.split(',')
         send_to = ','.join(format_address)
 
