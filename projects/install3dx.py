@@ -357,7 +357,7 @@ class InstallClient(PreProcessing):
                     return exe_full
 
     def send_email(self, to_address, subject, text=''):
-        from_address = '{}@3ds.com'.format(self.user)
+        from_address = '{}@xyz.com'.format(self.user)
         format_address = to_address.split(',')
         send_to = ','.join(format_address)
 
@@ -593,8 +593,8 @@ if __name__ == '__main__':
                         Ex: -showbuild R419')
     parser.add_argument('-notify', '--notify',
                         help='provide email to send notifications. \
-                        Ex: -notify vwj@3ds.com for single notification or \
-                        -notify vwj@3ds.com,vus@3ds.com for multiple notifications')
+                        Ex: -notify abc@xyz.com for single notification or \
+                        -notify abc@xyz.com,def@xyz.com for multiple users')
 
     args = parser.parse_args()
 

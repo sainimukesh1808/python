@@ -287,14 +287,13 @@ class ServerCheck:
             tme = ".".join(str(i) for i in [self.now.hour, self.now.minute])
             tme = float(tme)
             if 0 <= tme and tme <= 8:
-                self.notify_users = "msi26@3ds.com,j92@3ds.com,vus@3ds.com,bsu@3ds.com,r6e@3ds.com,h93@3ds.com"
+                self.notify_users = "abc@xyz.com,def@xyz.com"
             if 8 <= tme and tme <= 18:
                 self.notify_users = (
-                    "msi26@3ds.com,j92@3ds.com,vus@3ds.com,p6j@3ds.com,vuq@3ds.com,"
-                    + "rst1@3ds.com,aaa18@3ds.com"
+                    "ghi@xyz.com,mno@xyz.com"
                 )
             if 18 <= tme and tme <= 24:
-                self.notify_users = "msi26@3ds.com,vus@3ds.com"
+                self.notify_users = "stu@xyz.com,pqr@xyz.com"
         self.send_email(
             to_address=self.notify_users,
             subject="Server check",
@@ -397,10 +396,9 @@ if __name__ == "__main__":
     parser.add_argument(
         "-notify",
         "--notify",
-        help="provide email to send notifications, if user is not present in below list. \
-                        user = j92, vus, p6j, vuq, rst1, aaa18, bsu, msi26 \
-                        Ex: -notify msi26@3ds.com for single notification or \
-                        -notify msi26@3ds.com,vwj@3ds.com for multiple notifications",
+        help="provide email to send notifications.\
+                        Ex: -notify abc@xyz.com for single notification or \
+                        -notify abc@xyz.com,def@xyz.com for multiple users",
     )
 
     args = parser.parse_args()
